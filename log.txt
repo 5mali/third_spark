@@ -1,12 +1,49 @@
-|---------------------A3: OPTIMIZER = RMSPROP
+|----C1: A1 + PER(a=0.6,b=0.4), HUBER LOSS >>>OK but not optimal
+|
+|----C0: A0 + PER(a=0.6,b=0.4), MSE LOSS >>> OK but not optimal
+|                     |
+|                     |----C0a: (a=0.0, b=1):: EQUIVALENT TO A0 with lower LR >> OK but not optimal
+|                     |
+|                     |----C0b: (a=0.8, b=0.4)
+|                     |
+|                     |----C0c: (a=0.6, b=0.8)
+|                     | 
+|                     |----C0d: (a=0.8, b=0.8)
 |
 |
-|---------------------A2: BATCH_SIZE = 32
 |
 |
-|---------------------A1: LOSS = HUBER LOSS
+|----B0: Dueling Double DQN, MSE LOSS
+|
+|----B1: Dueling Double DQN, HUBER LOSS 
+|  
+|  
+|  
+|                                 |--- A3: OPTIMIZER = RMSPROP >>>> Better than A1
+|                                 |
+|                                 |
+|                                 |--- A2: BATCH_SIZE = 32-------NOT_OK
+|                                 |
+|                                 | 
+|---------------------A1: LOSS = HUBER LOSS >>>> OK
 |                     
-|                     
+|
+|
+|                                      A4a: Easy Scheduling
+|                                       |
+|                                       |
+|A4 is better than A5                   |
+|---------------------A4: BATCH_SIZE = 32 >>>> BETTER THAN A0
+|
+|
+|
+|                                      A5a: RMSPROP, BATCH_SIZE=32>>>> OK but not optimal
+|                                       |
+|                                       |
+|---------------------A5: OPTIMIZER = RMSPROP >>>> BETTER THAN A0
+|
+|
+
 |
 |
 #fixed stdize() CONSTANTS
@@ -15,9 +52,10 @@
 A0                                                                 *
 ********************************************************************
 MODEL:                                                             *
-A0   : INPUT->FC1->RELU->FC_OUT->OUTPUT                            *
-LOSS : MSE                                                         *
-RL   : Double DQN                                                  * 
+A0        : INPUT->FC1->RELU->FC_OUT->OUTPUT                       *
+LOSS      : MSE                                                    *
+OPTIMIZER : ADAM                                                   *
+RL        : Double DQN                                             * 
                                                                    *
 LEARNING:   INIT_WEIGHT     = FC1 : KAIMING                        *
                               OUT : XAVIER                         *
