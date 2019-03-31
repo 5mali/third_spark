@@ -1,22 +1,35 @@
-
+|---------------------A3: OPTIMIZER = RMSPROP
+|
+|
+|---------------------A2: BATCH_SIZE = 32
+|
+|
+|---------------------A1: LOSS = HUBER LOSS
+|                     
+|                     
+|
+|
+#fixed stdize() CONSTANTS
+#fixed weather forecast bug
 ********************************************************************
-B0                                                                 *
+A0                                                                 *
 ********************************************************************
 MODEL:                                                             *
-S3 : INPUT->FC1->RELU->FC_OUT->OUTPUT                              *
+A0   : INPUT->FC1->RELU->FC_OUT->OUTPUT                            *
 LOSS : MSE                                                         *
-                                                                   * 
+RL   : Double DQN                                                  * 
+                                                                   *
 LEARNING:   INIT_WEIGHT     = FC1 : KAIMING                        *
                               OUT : XAVIER                         *
             WIDTH           = 50                                   *
             DEPTH           = 1 + 1                                *
             WEIGHT_DECAY    = NONE                                 *
-            LR              = 1e-4                                 *
+            LR              = LR SCHEDULING                        *
             UPDATE_FREQ     = 18 MONTHS                            *
             MEMORY          = 36 MONTHS                            *
             ITERATION       = 100                                  *
             BATCH_SIZE      = 32                                   *
-            EPSILON         = EPSILON SCHEDULING-[0.762 to 0.967]  *           
+            EPSILON         = EPSILON SCHEDULING                   *           
             GAMMA           = 0.9                                  *
             LAMBDA          = 0.95                                 *
                                                                    *
