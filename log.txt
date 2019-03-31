@@ -1,3 +1,7 @@
+|----C3: A4 + PER(a=0.6,b=0.4), MSE LOSS, BATCH_SIZE=64
+|
+|----C2: A4 + PER(a=0.6,b=0.4), MSE LOSS, BATCH_SIZE=32
+|
 |----C1: A1 + PER(a=0.6,b=0.4), HUBER LOSS >>>OK but not optimal
 |
 |----C0: A0 + PER(a=0.6,b=0.4), MSE LOSS >>> OK but not optimal
@@ -28,12 +32,12 @@
 |---------------------A1: LOSS = HUBER LOSS >>>> OK
 |                     
 |
-|
-|                                      A4a: Easy Scheduling
-|                                       |
-|                                       |
-|A4 is better than A5                   |
-|---------------------A4: BATCH_SIZE = 32 >>>> BETTER THAN A0
+|                                       |---A4b: Easy Scheduling v3
+|                                       |---A4a: Easy Scheduling v1
+|                                       |                                           |--AA2: Easy Scheduling v3
+|                                       |                                           |--AA1: Easy Scheduling v2
+|A4 is better than A5                   |                                           |
+|---------------------A4: BATCH_SIZE = 32 >>>> BETTER THAN A0 ->>>>>>>>>>>>>>>>>>>>AA: General Reward Function
 |
 |
 |
