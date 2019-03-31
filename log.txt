@@ -1,3 +1,10 @@
+|     |----D1: Constant LR at 2.5E-4 
+|----D0: AA1 + PER(a=0.6, b=0.4)
+|
+|---AA1a: Constant LR at 2.5E-4
+|
+|*******USING AA1 as CHECKPOINT*****************************************************************************************************
+|
 |----C3: A4 + PER(a=0.6,b=0.4), MSE LOSS, BATCH_SIZE=64
 |
 |----C2: A4 + PER(a=0.6,b=0.4), MSE LOSS, BATCH_SIZE=32
@@ -32,10 +39,10 @@
 |---------------------A1: LOSS = HUBER LOSS >>>> OK
 |                     
 |
-|                                       |---A4b: Easy Scheduling v3
+|                                       |---A4b: Easy Scheduling v3 >> Good Results
 |                                       |---A4a: Easy Scheduling v1
 |                                       |                                           |--AA2: Easy Scheduling v3
-|                                       |                                           |--AA1: Easy Scheduling v2
+|                                       |                                           |--AA1: Easy Scheduling v2>>>>>>>>BEST RESULTS
 |A4 is better than A5                   |                                           |
 |---------------------A4: BATCH_SIZE = 32 >>>> BETTER THAN A0 ->>>>>>>>>>>>>>>>>>>>AA: General Reward Function
 |
