@@ -1,12 +1,18 @@
-|----F1: AA1 + PER (a=0.6, b=0.4, Max priority when added,  with random pretraining)
+|----F1: AA1 + PER (a=0.6, b=0.4, Max priority when added,  with random pretraining) -> F1a: clipped errors
+|                                                                                    -> F1b: HIGH LR  
+|                                                                                    -> F1c: clipped errors + HIGH LR + 200iteratios
+|                                                                                    -> F1d: clipped errors + HIGHER LR + 200iteratios    
+|                                                                                    -> F1e: clipped errors + HIGH LR + 200iteratios, a =0.8 
+|                                                                                    -> F1f: clipped errors + HIGH LR + 200iteratios, a =0.4    
+
 |
 |----F0: AA1 + PER (a=0.6, b=0.4, Max priority when added,  no random pretraining) -> F0a: clipped errors
-|
+|                                                                                  -> F0b: HIGH LR
 |
 |----E0a1: AA1 + PER (a=0.6, b=0.4, no maximum priority for new samples, with random pretraining)
 |
 |
-|----E0a0: AA1 + PER (a=0.6, b=0.4, no maximum priority for new samples, no random pretraining)
+|----E0a0: AA1 + PER (a=0.6, b=0.4, no maximum priority for new samples, no random pretraining)---XXX
 |
 |
 |XXXXXXXXXXXXXXXXXXX|----E0: AA1 + PER (a=0.6, b=0.4, MAX priority + error priority. BLUNDER?)--> E0a: Random exploration during initialization 
