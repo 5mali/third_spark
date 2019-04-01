@@ -1,4 +1,22 @@
-|     |----D1: Constant LR at 2.5E-4 
+|----F1: AA1 + PER (a=0.6, b=0.4, Max priority when added,  with random pretraining)
+|
+|----F0: AA1 + PER (a=0.6, b=0.4, Max priority when added,  no random pretraining) -> F0a: clipped errors
+|
+|
+|----E0a1: AA1 + PER (a=0.6, b=0.4, no maximum priority for new samples, with random pretraining)
+|
+|
+|----E0a0: AA1 + PER (a=0.6, b=0.4, no maximum priority for new samples, no random pretraining)
+|
+|
+|XXXXXXXXXXXXXXXXXXX|----E0: AA1 + PER (a=0.6, b=0.4, MAX priority + error priority. BLUNDER?)--> E0a: Random exploration during initialization 
+|
+|
+|
+|     |----D3: Constant LR at 2.5E-3 (a=0.0, b=1.0)>> Should be equivalent to AA1a
+|     |----D2: Constant LR at 2.5E-4 (a=0.0, b=1.0)>> Should be equivalent to AA1a with lower learning rate
+|     |----D1: Constant LR at 2.5E-4 (a=0.6, b=0.4)
+|     |
 |----D0: AA1 + PER(a=0.6, b=0.4)
 |
 |---AA1a: Constant LR at 2.5E-4
