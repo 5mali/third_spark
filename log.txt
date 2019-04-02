@@ -1,3 +1,15 @@
+        |-> AB3:  Using Dueling Double DQN, Easy Scheduling v2.0 [1e-4 to 1e-5, decay=0.05], BATCH_SIZE=64
+        |
+        |-> AB2a: Using Dueling Double DQN, Easy Scheduling v2.1 [1e-4 to 1e-6, decay=0.04]
+        |
+        |-> AB2:  Using Dueling Double DQN, Easy Scheduling v2.1 [1e-4 to 1e-6, decay=0.05] 
+        |
+|--AA1--|-> AB1:  Using Dueling Double DQN, Easy Scheduling v2.0 [1e-4 to 1e-5, decay=0.05]
+| 
+| 
+|
+|Abandoning PER for the moment. 
+|*************************************************************************************************************************************
 |----F1: AA1 + PER (a=0.6, b=0.4, Max priority when added,  with random pretraining) -> F1a: clipped errors
 |                                                                                    -> F1b: HIGH LR  
 |                                                                                    -> F1c: clipped errors + HIGH LR + 200iteratios
